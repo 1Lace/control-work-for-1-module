@@ -41,23 +41,38 @@ void PrintArray(string[] array) //ф-я вывода П массива на эк
     Console.WriteLine(result); // выводим П массив на экран
 }
 
-string[] СheckingForThreeCharacters(string[] array, string[] FixedArray)
+
+string[] СheckingForThreeCharacters(string[] array)
 {
+    int count = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3 ) FixedArray[i] += array[i];
+        if (array[i].Length <= 3)
+        {
+            count++;
+        }
+    }
+
+    string[] FixedArray = new string[count];
+    int index = 0;
+
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            FixedArray[index++] = array[i];
+        }
     }
     return FixedArray;
 }
 
 int length = Len("Введите кол-во элементов: ");
 string[] array;
-string[] FixedArray;
 array = InputArray(length);
-FixedArray = new string[array.Length];
+
 
 Console.Write("Пользовательский массив - ");
 PrintArray(array);
 
-СheckingForThreeCharacters(array, FixedArray);
-PrintArray(FixedArray);
+СheckingForThreeCharacters(array);
+PrintArray(СheckingForThreeCharacters(array));
