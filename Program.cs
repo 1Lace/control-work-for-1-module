@@ -1,4 +1,6 @@
-﻿int Len (string message) // ф-я ввода кол-ва строк которые будет вводит П(пользователь)
+﻿using System.ComponentModel.Design;
+
+int Len (string message) // ф-я ввода кол-ва строк которые будет вводит П(пользователь)
 {
     Console.WriteLine(message); // Здесь мы можем гапистаь сообщение перед тем как П сможет что то ввести
     string value = Console.ReadLine(); // считывает с ввод с консоли
@@ -39,9 +41,23 @@ void PrintArray(string[] array) //ф-я вывода П массива на эк
     Console.WriteLine(result); // выводим П массив на экран
 }
 
+string[] СheckingForThreeCharacters(string[] array, string[] FixedArray)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3 ) FixedArray[i] += array[i];
+    }
+    return FixedArray;
+}
+
 int length = Len("Введите кол-во элементов: ");
 string[] array;
+string[] FixedArray;
 array = InputArray(length);
+FixedArray = new string[array.Length];
 
 Console.Write("Пользовательский массив - ");
 PrintArray(array);
+
+СheckingForThreeCharacters(array, FixedArray);
+PrintArray(FixedArray);
