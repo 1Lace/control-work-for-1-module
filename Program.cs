@@ -2,15 +2,15 @@
 
 int Len (string message) // ф-я ввода кол-ва строк которые будет вводит П(пользователь)
 {
-    Console.WriteLine(message); // Здесь мы можем гапистаь сообщение перед тем как П сможет что то ввести
+    Console.WriteLine(message); // Здесь мы можем написать сообщение перед тем как П сможет что то ввести
     int result = Convert.ToInt32(Console.ReadLine()); // считывает с ввод с консоли и преобразует строку в int
     return result;
 }
 
-string Str (string message) // ф-я ввода самих строк
+string EnteringLines (string message) // ф-я ввода самих строк
 {
     Console.WriteLine(message);
-    string result = Console.ReadLine(); // считывает с ввод с консоли
+    string result = Console.ReadLine(); // считывает ввод с консоли
     return result;
 }
 
@@ -19,7 +19,7 @@ string[] InputArray(int length) // ф-я заполнения пользоват
     string[] array = new string[length]; // создаём массив куда будем кидать то что ввёл П
     for (int i = 0; i < array.Length; i++) // цикл ввода для каждого индекса
     {
-        array[i] = Str($"Введите {i + 1}-й элемент: ");
+        array[i] = EnteringLines($"Введите {i + 1}-й элемент: ");
     }
     return array; // возвр-м П массив
 }
