@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Design;
+﻿
 
 int Len (string message) // ф-я ввода кол-ва строк которые будет вводит П(пользователь)
 {
@@ -38,7 +38,7 @@ void PrintArray(string[] array) //ф-я вывода П массива на эк
         }
     }
     result += "]"; // если массив проверку не прошёл значит он закончился и мы можем добавить правую квадратную скобку
-    Console.WriteLine(result); // выводим П массив на экран
+    Console.Write(result); // выводим П массив на экран
 }
 
 
@@ -70,9 +70,7 @@ int length = Len("Введите кол-во элементов: ");
 string[] array;
 array = InputArray(length);
 
-
-Console.Write("Пользовательский массив - ");
 PrintArray(array);
-
+Console.Write(" → ");
 СheckingForThreeCharacters(array);
 PrintArray(СheckingForThreeCharacters(array));
