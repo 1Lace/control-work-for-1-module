@@ -25,7 +25,7 @@ string[] InputArray(int length) // ф-я заполнения пользоват
 }
 
 
-void PrintArray(string[] array) //ф-я вывода П массива на экран
+void PrintArray(string[] array) //ф-я вывода массива на экран
 {
     string result = "["; // создаём пер-нную куда будем кидать визуально карсивый массив. Сначала добавляем левую квадратную скобку
     for (int i = 0; i < array.Length; i++) // цикл на добавление Двойных ковычек
